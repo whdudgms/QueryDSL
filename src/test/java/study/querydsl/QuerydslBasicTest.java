@@ -47,6 +47,9 @@ public class QuerydslBasicTest {
 
     @BeforeEach
     public void before() {
+        em.createQuery("delete from Member").executeUpdate();
+        em.createQuery("delete from Team").executeUpdate();
+
         queryFactory = new JPAQueryFactory(em);
 
         Team teamA = new Team("teamA");
@@ -774,6 +777,7 @@ private List<MemberDto> searchMember2(String usernameCond, Integer ageCond){
 //                        Expressions.stringTemplate("function('lower',{0})", member.username)))
                 .where(member.username.eq(member.username.lower()))
                 .fetch();
+        
         for (String s : result) {
             System.out.println("s = " + s);
         }
