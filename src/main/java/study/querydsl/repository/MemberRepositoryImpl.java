@@ -21,6 +21,7 @@ import static study.querydsl.entity.QMember.member;
 import static study.querydsl.entity.QTeam.team;
 
 
+// QuerydslRepositorySupport 는 코드를 줄여주기는 하지만 별 의미가 없어서 지웠다. - 비추천
 //MemberRepository  + Impl 이런 구조여야한다.
 public class MemberRepositoryImpl implements MemberRepositoryCustom{
 
